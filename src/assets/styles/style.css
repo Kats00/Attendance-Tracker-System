@@ -1,0 +1,37 @@
+@import url(./colors.css);
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.gap-medium{
+    gap: 0.7rem;
+}
+
+.light-grey {
+    background-color: var(--light-grey) !important;
+}
+
+.white {
+    background-color: #ffffff;
+}
+
+.no-wrap {
+    flex-wrap: nowrap !important;
+}
+
+.addUser {
+    content: "Add User" !important;
+}
+
+.h-fit-content {
+    height: fit-content !important;
+}
+
+.w-fit-content {
+    width: fit-content !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}

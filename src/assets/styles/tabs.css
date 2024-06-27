@@ -1,0 +1,11 @@
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    background-color: var(--blue004) !important;
+    border-radius: 0.3rem;
+    color: white !important;
+    font-size: small !important;
+    border: 0;
+}
+
+.nav-link {
+    font-size: small !important;
+}

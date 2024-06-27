@@ -1,0 +1,26 @@
+.collapse-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.navbar-brand {
+    padding: 0 !important;
+}
+
+.navbar-nav {
+    width: fit-content !important;
+}
+
+.badge {
+   position: absolute;
+   margin-top: 0.7rem;
+   margin-left: 0.5rem;
+   font-size: 0.55rem !important;
+   padding: 0.2rem !important;
+}
+
+.nav-link {
+    padding: 0rem !important;
+    font-size: medium !important;
+}
