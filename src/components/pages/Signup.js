@@ -110,7 +110,7 @@ const Signup = () => {
 
         <MDBRow className='mb-4'>
           <MDBCol>
-            <a href='/'>Sign in</a>
+            <a href='/'>Already have an account? Sign in</a>
           </MDBCol>
         </MDBRow>
 

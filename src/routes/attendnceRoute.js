@@ -128,9 +128,6 @@ const getAttendances = async () =>{
         breakStart: data.breakStart,
         breakEnd: data.breakEnd,
         attendanceStatus: data.attendanceStatus,
-        userId: data.userId._id,
-        username: data.userId.username, 
-        name: `${data.userId.firstname} ${data.userId.lastname}`, 
         }));
 
         return tableData;

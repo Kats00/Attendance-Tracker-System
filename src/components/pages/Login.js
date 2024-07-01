@@ -43,7 +43,7 @@ const Login = ({ onLogin }) => {
 
         <MDBRow className='mb-4'>
           <MDBCol>
-            <a href='/signup'>Sign Up</a>
+            <a href='/signup'>Don't have an account? Sign Up</a>
           </MDBCol>
         </MDBRow>
 

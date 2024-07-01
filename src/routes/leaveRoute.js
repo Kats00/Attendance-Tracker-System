@@ -92,16 +92,15 @@ const getLeaves = async () =>{
     try {
        const res = await axios.get(`http://localhost:3000/api/leaves`); 
 
+       console.log(res);
+       
        const tableData = res.data.map(data => ({
             id: data._id,
             leaveType: data.leaveType,
             reason: data.reason,
             status: data.status,
             startDate: data.startDate,
-            endDate: data.endDate,
-            userId: data.userId._id,
-            username: data.userId.username, 
-            name: `${data.userId.firstname} ${data.userId.lastname}`, 
+            endDate: data.endDate, 
         }));
 
         return tableData;

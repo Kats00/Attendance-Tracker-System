@@ -30,3 +30,7 @@ table td {
     cursor: pointer;
     text-wrap: nowrap;
 }
+
+a[href='/dashboard'] {
+    text-transform: uppercase;
+}
