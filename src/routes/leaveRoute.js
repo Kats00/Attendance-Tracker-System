@@ -7,7 +7,7 @@ const getUserLeaves = async (id) => {
       if (userId && typeof userId === 'string') {
         userId = userId.replace(/^"(.*)"$/, '$1');
       }
-      const res = await axios.get(`http://localhost:3000/api/leaves/${userId}`); 
+      const res = await axios.get(`https://attendance-tracker-system-api.onrender.com/api/leaves/${userId}`); 
 
       const tableData = res.data.map(data => ({
         id: data._id,
@@ -41,7 +41,7 @@ const addLeave = async (data, id) => {
   
         console.log(newData);
   
-        const response = await axios.post('http://localhost:3000/api/add-leave', newData);
+        const response = await axios.post('https://attendance-tracker-system-api.onrender.com/api/add-leave', newData);
   
         return response.data;
     }catch (error) {
@@ -55,7 +55,7 @@ const addLeave = async (data, id) => {
 
 const getAllPendingLeaves = async () =>{
     try {
-        const res = await axios.get(`http://localhost:3000/api/pending-leaves`); 
+        const res = await axios.get(`https://attendance-tracker-system-api.onrender.com/api/pending-leaves`); 
 
         const tableData = res.data.map(data => ({
             id: data._id,
@@ -80,7 +80,7 @@ const arLeave = async (id, status) => {
     try {
         const sendStatus = {status};
 
-        await axios.put(`http://localhost:3000/api/approve-leave/${id}`, sendStatus); 
+        await axios.put(`https://attendance-tracker-system-api.onrender.com/api/approve-leave/${id}`, sendStatus); 
 
     } catch (error) {
         console.error('Error fetching user attendances:', error.message);
@@ -90,7 +90,7 @@ const arLeave = async (id, status) => {
 
 const getLeaves = async () =>{
     try {
-       const res = await axios.get(`http://localhost:3000/api/leaves`); 
+       const res = await axios.get(`https://attendance-tracker-system-api.onrender.com/api/leaves`); 
 
        console.log(res);
        

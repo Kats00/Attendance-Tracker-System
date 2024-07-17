@@ -7,7 +7,7 @@ const getUserAttendances = async (id) => {
       if (userId && typeof userId === 'string') {
         userId = userId.replace(/^"(.*)"$/, '$1');
       }
-      const res = await axios.get(`http://localhost:3000/api/user-attendances/${userId}`); 
+      const res = await axios.get(`https://attendance-tracker-system-api.onrender.com/api/user-attendances/${userId}`); 
   
       const tableData = res.data.map(data => ({
         id: data._id,
@@ -42,7 +42,7 @@ const addAttendance = async (data, id) => {
   
         console.log(newRecord);
   
-        const response = await axios.post('http://localhost:3000/api/add-attendance', newRecord);
+        const response = await axios.post('https://attendance-tracker-system-api.onrender.com/api/add-attendance', newRecord);
   
         return response.data;
     }catch (error) {
@@ -70,7 +70,7 @@ const saveAttendanceData = async (data, userId) => {
   
       console.log(newData);
   
-      const response = await axios.put(`http://localhost:3000/api/update-attendance/${data.id}`, newData);
+      const response = await axios.put(`https://attendance-tracker-system-api.onrender.com/api/update-attendance/${data.id}`, newData);
       return response.data; 
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
@@ -83,7 +83,7 @@ const saveAttendanceData = async (data, userId) => {
 
 const getAllPendingAttendance = async () =>{
     try {
-        const res = await axios.get(`http://localhost:3000/api/pending-attendances`); 
+        const res = await axios.get(`https://attendance-tracker-system-api.onrender.com/api/pending-attendances`); 
 
         const tableData = res.data.map(data => ({
             id: data._id,
@@ -109,7 +109,7 @@ const arAttendance = async (id, status, userId) => {
     try {
         const sendStatus = {status};
 
-        await axios.put(`http://localhost:3000/api/approve-attendance/${id}/${userId}`, sendStatus); 
+        await axios.put(`https://attendance-tracker-system-api.onrender.com/api/approve-attendance/${id}/${userId}`, sendStatus); 
 
     } catch (error) {
         console.error('Error fetching user attendances:', error.message);
@@ -119,7 +119,7 @@ const arAttendance = async (id, status, userId) => {
 
 const getAttendances = async () =>{
     try {
-       const res = await axios.get(`http://localhost:3000/api/attendances`); 
+       const res = await axios.get(`https://attendance-tracker-system-api.onrender.com/api/attendances`); 
 
        const tableData = res.data.map(data => ({
         id: data._id,

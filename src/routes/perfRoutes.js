@@ -6,7 +6,7 @@ const getUserPerformances = async (id) => {
       if (userId && typeof userId === 'string') {
         userId = userId.replace(/^"(.*)"$/, '$1');
       }
-      const res = await axios.get(`http://localhost:3000/api/performances/${userId}`); 
+      const res = await axios.get(`https://attendance-tracker-system-api.onrender.com/api/performances/${userId}`); 
 
       const tableData = res.data.map(data => ({
         id: data._id,

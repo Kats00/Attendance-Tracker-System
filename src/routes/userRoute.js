@@ -3,7 +3,7 @@ import User from '../models/user';
 
 const login = async (usernameOrEmail, password, onLogin, navigate) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/login', {
+    const response = await axios.post('https://attendance-tracker-system-api.onrender.com/api/login', {
       usernameOrEmail,
       password
     });
@@ -35,7 +35,7 @@ const registerUser = async (userData) => {
 
         console.log(userData.username);
   
-        const response = await axios.post('http://localhost:3000/api/register', newUser);
+        const response = await axios.post('https://attendance-tracker-system-api.onrender.com/api/register', newUser);
   
         return response.data;
     }catch (error) {
@@ -61,7 +61,7 @@ const addUser = async (userData) => {
 
       console.log(userData.username);
 
-      const response = await axios.post('http://localhost:3000/api/register', newUser);
+      const response = await axios.post('https://attendance-tracker-system-api.onrender.com/api/register', newUser);
 
       return response.data;
   }catch (error) {
@@ -75,7 +75,7 @@ const addUser = async (userData) => {
 
 const getAllUsersData = async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/allUsers', {
+    const response = await axios.get('https://attendance-tracker-system-api.onrender.com/api/allUsers', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -117,7 +117,7 @@ const saveUserData = async (userData, id) => {
 
     console.log(userData.username);
 
-    const response = await axios.put(`http://localhost:3000/api/admin-edit/${uid}`, newUser);
+    const response = await axios.put(`https://attendance-tracker-system-api.onrender.com/api/admin-edit/${uid}`, newUser);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -126,7 +126,7 @@ const saveUserData = async (userData, id) => {
 
 const deleteUser = async (id) => {
   try {
-    const response = await axios.delete(`http://localhost:3000/api/delete-user/${id}`, {
+    const response = await axios.delete(`https://attendance-tracker-system-api.onrender.com/api/delete-user/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -146,7 +146,7 @@ const getUserById = async (id) => {
       if (uid && typeof id === 'string') {
         uid = id.replace(/^"(.*)"$/, '$1'); // Remove surrounding quotes if present
     }
-    const response = await axios.get(`http://localhost:3000/api/getUser/${uid}`);
+    const response = await axios.get(`https://attendance-tracker-system-api.onrender.com/api/getUser/${uid}`);
     return response;
   } catch (error) {
     console.error('Error fetching users:', error.message);
