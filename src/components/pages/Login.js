@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MDBInput, MDBBtn, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import { login } from '../../routes/userRoute'; // Assuming login function is correctly imported
+import { Link } from 'react-router-dom'
 
 const Login = ({ onLogin }) => {
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
@@ -43,7 +44,7 @@ const Login = ({ onLogin }) => {
 
         <MDBRow className='mb-4'>
           <MDBCol>
-            <a href='/signup'>Don't have an account? Sign Up</a>
+            <Link to='/signup'>Don't have an account? Sign Up</Link>
           </MDBCol>
         </MDBRow>
 
