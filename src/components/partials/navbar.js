@@ -5,17 +5,14 @@ import {
   MDBNavbarBrand,
   MDBIcon,
   MDBNavbarLink,
-  MDBBadge,
   MDBDropdownItem,
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
-  MDBNavbarNav,
-  MDBNavbarItem
 } from 'mdb-react-ui-kit';
 import '../../assets/styles/navbar.css';
 import '../../assets/styles/style.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function App() {
   const navigate = useNavigate();
@@ -37,7 +34,7 @@ export default function App() {
           <div className='d-flex'>
             <MDBNavbarBrand href='#'>Attendance Tracker</MDBNavbarBrand>
             <MDBNavbarLink aria-current='page' className='w-fit-content' color='bg-light' href='/dashboard'>
-              dashboard
+              <Link to="/dashboard">DASHBOARD</Link>
             </MDBNavbarLink>
           </div>
 

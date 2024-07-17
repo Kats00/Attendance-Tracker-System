@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../partials/navbar';
 import "../../assets/styles/style.css";
-import { getUserById, saveUserData } from '../../routes/userRoute'; // Assuming you have updateUser function defined
+import { getUserById, saveUserData } from '../../routes/userRoute'; 
 
 const Profile = () => {
     const thisUserId = localStorage.getItem('userid');
-    const [thisUser, setThisUser] = useState(null); // Initialize with null instead of an empty array
+    const [thisUser, setThisUser] = useState(null);
 
     useEffect(() => {
         getUserById(thisUserId)
             .then(result => {
-                setThisUser(result.data.user); // Set user data directly, assuming getUserById returns { data: { user: { ... } } }
+                setThisUser(result.data.user); 
             })
             .catch(error => {
                 console.error('Error:', error); 
             });
-    }, [thisUserId]); // Add thisUserId as a dependency to fetch data on user ID change
+    }, [thisUserId]); 
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;

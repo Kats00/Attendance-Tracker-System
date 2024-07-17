@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MDBInput, MDBBtn, MDBRow, MDBCol} from 'mdb-react-ui-kit'; // Import MDBAlert for displaying error messages
 import { registerUser } from '../../routes/userRoute';
+import { Link } from 'react-router-dom'
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -110,7 +111,7 @@ const Signup = () => {
 
         <MDBRow className='mb-4'>
           <MDBCol>
-            <a href='/'>Already have an account? Sign in</a>
+            <Link to='/'>Already have an account? Sign in</Link>
           </MDBCol>
         </MDBRow>
 
